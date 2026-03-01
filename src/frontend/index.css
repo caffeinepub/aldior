@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── ALDIOR DESIGN TOKENS ─────────────────────────────────────── */
+
+@layer base {
+  :root {
+    --radius: 0rem;
+
+    /* Pure black editorial theme */
+    --background: 0 0 0;
+    --foreground: 0.97 0 0;
+
+    --card: 0.08 0 0;
+    --card-foreground: 0.97 0 0;
+
+    --popover: 0.08 0 0;
+    --popover-foreground: 0.97 0 0;
+
+    /* Primary = off-white/cream */
+    --primary: 0.96 0.008 80;
+    --primary-foreground: 0 0 0;
+
+    /* Secondary = dark gray */
+    --secondary: 0.12 0 0;
+    --secondary-foreground: 0.97 0 0;
+
+    --muted: 0.14 0 0;
+    --muted-foreground: 0.55 0 0;
+
+    --accent: 0.18 0 0;
+    --accent-foreground: 0.97 0 0;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.22 0 0;
+    --input: 0.15 0 0;
+    --ring: 0.55 0 0;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.06 0 0;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.96 0.008 80;
+    --sidebar-primary-foreground: 0 0 0;
+    --sidebar-accent: 0.12 0 0;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.18 0 0;
+    --sidebar-ring: 0.55 0 0;
+
+    /* ALDIOR custom tokens */
+    --aldior-cream: 0.96 0.008 80;
+    --aldior-gold: 0.82 0.08 85;
+    --aldior-red: 0.60 0.22 25;
+    --aldior-dark: 0.06 0 0;
+    --aldior-mid: 0.14 0 0;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'General Sans', 'Outfit', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    font-variation-settings: "opsz" 9;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ─── FONT DECLARATIONS ─────────────────────────────────────────── */
+/* Note: Using system/CDN-available fonts since no pre-bundled woff2 present */
+/* In production, these will be served from a font CDN or fallback to system */
+
+/* ─── ALDIOR CUSTOM STYLES ──────────────────────────────────────── */
+
+/* Grain texture overlay */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Brand name zoom animation */
+@keyframes aldior-zoom-in {
+  0% {
+    transform: scale(4);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes aldior-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.aldior-brand {
+  animation: aldior-zoom-in 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-variation-settings: "opsz" 144;
+}
+
+.aldior-tagline-reveal {
+  animation: aldior-fade-up 0.8s ease-out 1.6s both;
+}
+
+.aldior-cta-reveal {
+  animation: aldior-fade-up 0.8s ease-out 2.0s both;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+/* Nav link underline sweep */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: oklch(var(--aldior-cream));
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Product card hover */
+.product-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Outlined button style */
+.btn-outline-white {
+  border: 1px solid oklch(var(--aldior-cream));
+  color: oklch(var(--aldior-cream));
+  background: transparent;
+  letter-spacing: 0.15em;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-outline-white:hover {
+  background: oklch(var(--aldior-cream));
+  color: oklch(0 0 0);
+}
+
+/* Form inputs */
+.aldior-input {
+  background: transparent;
+  border: 1px solid oklch(0.25 0 0);
+  color: oklch(var(--foreground));
+  transition: border-color 0.3s ease;
+}
+.aldior-input:focus {
+  outline: none;
+  border-color: oklch(var(--aldior-cream));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.3 0 0);
+}
+
+/* Category tile hover */
+.category-tile {
+  position: relative;
+  overflow: hidden;
+}
+.category-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: oklch(0 0 0 / 0.4);
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+.category-tile:hover::before {
+  background: oklch(0 0 0 / 0.6);
+}
+
+/* Cart badge */
+.cart-badge {
+  background: oklch(var(--aldior-red));
+  color: white;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'General Sans', sans-serif;
+  font-weight: 700;
+}
+
+/* Section divider */
+.aldior-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, oklch(0.25 0 0), transparent);
+}
