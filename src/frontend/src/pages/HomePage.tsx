@@ -24,19 +24,19 @@ function MarqueeStrip() {
 // ─── FEATURED COLLECTION ─────────────────────────────────────────
 const featuredItems = [
   {
-    image: "/assets/generated/product-bomber.dim_600x700.jpg",
+    image: "/assets/generated/product-bomber.dim_800x1000.jpg",
     name: "THE BOMBER",
     category: "OUTERWEAR",
     description: "Structured silhouette. Uncompromising presence.",
   },
   {
-    image: "/assets/generated/product-hoodie.dim_600x700.jpg",
+    image: "/assets/generated/product-hoodie.dim_800x1000.jpg",
     name: "OVERSIZED HOODIE",
     category: "TOPS",
     description: "Worn loose, lived in.",
   },
   {
-    image: "/assets/generated/product-trousers.dim_600x700.jpg",
+    image: "/assets/generated/product-trousers.dim_800x1000.jpg",
     name: "CARGO TROUSERS",
     category: "BOTTOMS",
     description: "Built for movement. Styled for intention.",
@@ -173,22 +173,22 @@ function BrandStatement() {
 const categories = [
   {
     label: "TOPS",
-    image: "/assets/generated/product-tee.dim_600x700.jpg",
+    image: "/assets/generated/product-tshirt.dim_800x1000.jpg",
     filter: "TOPS",
   },
   {
     label: "BOTTOMS",
-    image: "/assets/generated/product-trousers.dim_600x700.jpg",
+    image: "/assets/generated/product-trousers.dim_800x1000.jpg",
     filter: "BOTTOMS",
   },
   {
     label: "OUTERWEAR",
-    image: "/assets/generated/product-bomber.dim_600x700.jpg",
+    image: "/assets/generated/product-bomber.dim_800x1000.jpg",
     filter: "OUTERWEAR",
   },
   {
     label: "ACCESSORIES",
-    image: "/assets/generated/product-hoodie.dim_600x700.jpg",
+    image: "/assets/generated/product-beanie.dim_800x1000.jpg",
     filter: "ACCESSORIES",
   },
 ];
