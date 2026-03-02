@@ -2,7 +2,7 @@ import { useSubmitContact } from "@/hooks/useQueries";
 import { CheckCircle, Loader2, Mail } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-import { SiInstagram, SiTiktok, SiX } from "react-icons/si";
+import { SiInstagram } from "react-icons/si";
 
 export function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -183,10 +183,7 @@ export function ContactPage() {
                 ALDIOR HQ
               </h3>
               <div className="space-y-2">
-                <p className="text-sm font-body text-white/60">
-                  New York, NY 10001
-                </p>
-                <p className="text-sm font-body text-white/60">United States</p>
+                <p className="text-sm font-body text-white/60">India</p>
               </div>
             </div>
 
@@ -195,11 +192,11 @@ export function ContactPage() {
                 Email
               </h3>
               <a
-                href="mailto:hello@aldior.com"
+                href="mailto:ujjwaljain099@gmail.com"
                 className="flex items-center gap-2 text-sm font-body text-aldior-cream hover:opacity-60 transition-opacity"
               >
                 <Mail size={14} strokeWidth={1.5} />
-                hello@aldior.com
+                ujjwaljain099@gmail.com
               </a>
             </div>
 
@@ -209,34 +206,14 @@ export function ContactPage() {
               </h3>
               <div className="flex items-center gap-5">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/aldior.in?igsh=end3nxd4agtiexfz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-aldior-cream transition-colors"
                   aria-label="Instagram"
                 >
                   <SiInstagram size={16} />
-                  <span className="text-xs tracking-[0.15em]">@aldior</span>
-                </a>
-                <a
-                  href="https://x.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-aldior-cream transition-colors"
-                  aria-label="Twitter"
-                >
-                  <SiX size={16} />
-                  <span className="text-xs tracking-[0.15em]">@aldior</span>
-                </a>
-                <a
-                  href="https://tiktok.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-aldior-cream transition-colors"
-                  aria-label="TikTok"
-                >
-                  <SiTiktok size={16} />
-                  <span className="text-xs tracking-[0.15em]">@aldior</span>
+                  <span className="text-xs tracking-[0.15em]">@aldior.in</span>
                 </a>
               </div>
             </div>
@@ -247,11 +224,9 @@ export function ContactPage() {
                 Customer Service
               </h3>
               <p className="text-xs font-body text-white/50">
-                Mon – Fri: 9AM – 6PM EST
+                Mon–Sat: 10AM–7PM IST
               </p>
-              <p className="text-xs font-body text-white/50">
-                Sat – Sun: 10AM – 4PM EST
-              </p>
+              <p className="text-xs font-body text-white/50">Sun: Closed</p>
               <p className="text-[10px] font-body text-white/30 mt-2">
                 Response time: 24–48 hours
               </p>

@@ -18,7 +18,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(50),
     imageUrl: "",
     category: "TOPS",
-    price: BigInt(4900),
+    price: BigInt(149900),
   },
   {
     id: BigInt(2),
@@ -28,7 +28,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(30),
     imageUrl: "",
     category: "BOTTOMS",
-    price: BigInt(8900),
+    price: BigInt(299900),
   },
   {
     id: BigInt(3),
@@ -38,7 +38,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(15),
     imageUrl: "",
     category: "OUTERWEAR",
-    price: BigInt(18900),
+    price: BigInt(599900),
   },
   {
     id: BigInt(4),
@@ -48,7 +48,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(25),
     imageUrl: "",
     category: "TOPS",
-    price: BigInt(9500),
+    price: BigInt(249900),
   },
   {
     id: BigInt(5),
@@ -58,7 +58,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(20),
     imageUrl: "",
     category: "OUTERWEAR",
-    price: BigInt(12500),
+    price: BigInt(349900),
   },
   {
     id: BigInt(6),
@@ -68,7 +68,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(18),
     imageUrl: "",
     category: "BOTTOMS",
-    price: BigInt(11500),
+    price: BigInt(279900),
   },
   {
     id: BigInt(7),
@@ -78,7 +78,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(40),
     imageUrl: "",
     category: "ACCESSORIES",
-    price: BigInt(3500),
+    price: BigInt(99900),
   },
   {
     id: BigInt(8),
@@ -88,7 +88,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     stock: BigInt(22),
     imageUrl: "",
     category: "TOPS",
-    price: BigInt(6500),
+    price: BigInt(179900),
   },
 ];
 
@@ -193,9 +193,6 @@ export function ShopPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-[10px] font-body font-semibold tracking-[0.4em] text-white/30 uppercase mb-3">
-            SS26
-          </p>
           <h1
             className="text-5xl md:text-8xl font-display font-black text-aldior-cream"
             style={{ letterSpacing: "-0.02em" }}

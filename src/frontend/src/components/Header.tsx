@@ -43,7 +43,12 @@ export function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-2">
+            <img
+              src="/assets/uploads/642952176_18050180807503559_3939477048185680875_n-1.jpg"
+              alt="ALDIOR Logo"
+              className="h-8 w-8 md:h-10 md:w-10 object-contain rounded-sm"
+            />
             <span
               className="text-xl md:text-2xl font-display font-black tracking-[0.25em] text-aldior-cream"
               style={{ letterSpacing: "0.25em" }}

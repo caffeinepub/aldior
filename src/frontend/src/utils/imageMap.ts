@@ -61,6 +61,7 @@ export function getProductImage(category: string, name: string): string {
   return images[hash % images.length];
 }
 
-export function formatPrice(priceCents: bigint): string {
-  return `$${(Number(priceCents) / 100).toFixed(2)}`;
+export function formatPrice(pricePaise: bigint): string {
+  const amount = Number(pricePaise) / 100;
+  return `₹${amount.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
 }

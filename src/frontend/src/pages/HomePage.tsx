@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // ─── MARQUEE STRIP ───────────────────────────────────────────────
 function MarqueeStrip() {
-  const text = "BUILD LOUD. WORN LOOSE — ALDIOR — NEW COLLECTION — SS26 — ";
+  const text = "BUILD LOUD. WORN LOOSE — ALDIOR — NEW COLLECTION — ";
   const repeated = text.repeat(6);
   return (
     <div className="overflow-hidden bg-aldior-cream py-3.5 select-none">
@@ -49,7 +49,7 @@ function FeaturedSection() {
       <div className="flex items-end justify-between mb-12 md:mb-16">
         <div>
           <p className="text-xs font-body font-semibold tracking-[0.3em] text-white/40 uppercase mb-3">
-            SS26 Collection
+            New Collection
           </p>
           <h2
             className="text-4xl md:text-6xl font-display font-black text-aldior-cream"
