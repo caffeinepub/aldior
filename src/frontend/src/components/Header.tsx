@@ -47,7 +47,8 @@ export function Header() {
             <img
               src="/assets/uploads/642952176_18050180807503559_3939477048185680875_n-1.jpg"
               alt="ALDIOR Logo"
-              className="h-8 w-8 md:h-10 md:w-10 object-contain rounded-sm"
+              className="h-9 w-9 md:h-11 md:w-11 object-contain"
+              style={{ filter: "brightness(1.05)" }}
             />
             <span
               className="text-xl md:text-2xl font-display font-black tracking-[0.25em] text-aldior-cream"

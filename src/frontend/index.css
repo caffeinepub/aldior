@@ -57,6 +57,7 @@
     /* ALDIOR custom tokens */
     --aldior-cream: 0.96 0.008 80;
     --aldior-gold: 0.82 0.08 85;
+    --aldior-gold-accent: 0.78 0.09 75;
     --aldior-red: 0.60 0.22 25;
     --aldior-dark: 0.06 0 0;
     --aldior-mid: 0.14 0 0;
@@ -184,12 +185,62 @@
   width: 100%;
 }
 
+/* Hero logo image */
+.hero-logo-img {
+  display: block;
+  max-width: 260px;
+  width: 45vw;
+  min-width: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 40px oklch(0.96 0.008 80 / 0.12));
+  position: relative;
+  z-index: 1;
+}
+
+/* Gold divider */
+.aldior-gold-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, oklch(0.78 0.09 75 / 0.35), transparent);
+  margin: 0;
+}
+
+/* Gold underline accent for category tiles */
+.cat-underline-gold {
+  background: oklch(0.78 0.09 75);
+}
+
 /* Product card hover */
 .product-card {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 .product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px oklch(0 0 0 / 0.6);
+}
+
+/* Luxury shimmer on product card hover */
+.luxury-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.luxury-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    oklch(0.96 0.008 80 / 0.07) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.luxury-shimmer:hover::after {
+  opacity: 1;
+  animation: shimmer 0.8s ease forwards;
 }
 
 /* Outlined button style */
@@ -201,7 +252,7 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 .btn-outline-white:hover {
-  background: oklch(var(--aldior-cream));
+  background: oklch(0.94 0.008 80);
   color: oklch(0 0 0);
 }
 

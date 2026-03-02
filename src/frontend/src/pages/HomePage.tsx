@@ -10,10 +10,10 @@ function MarqueeStrip() {
   return (
     <div className="overflow-hidden bg-aldior-cream py-3.5 select-none">
       <div className="marquee-track">
-        <span className="whitespace-nowrap text-black text-xs font-body font-bold tracking-[0.25em] uppercase pr-0">
+        <span className="whitespace-nowrap text-black text-xs font-body font-bold tracking-[0.35em] uppercase pr-0">
           {repeated}
         </span>
-        <span className="whitespace-nowrap text-black text-xs font-body font-bold tracking-[0.25em] uppercase">
+        <span className="whitespace-nowrap text-black text-xs font-body font-bold tracking-[0.35em] uppercase">
           {repeated}
         </span>
       </div>
@@ -152,6 +152,7 @@ function BrandStatement() {
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-3xl md:text-6xl lg:text-7xl font-display font-black text-aldior-cream leading-[1.1] tracking-[-0.02em]"
+          style={{ textShadow: "0 0 80px oklch(0.96 0.008 80 / 0.08)" }}
         >
           "DRESSED FOR THE ONES
           <br />
@@ -276,21 +277,32 @@ function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        {/* Brand name with zoom animation */}
-        <h1
-          className="aldior-brand font-display font-black text-aldior-cream"
+        {/* Warm glow behind logo */}
+        <div
+          className="absolute pointer-events-none"
           style={{
-            fontSize: "clamp(5rem, 20vw, 16rem)",
-            lineHeight: 0.85,
-            letterSpacing: "0.15em",
+            width: "500px",
+            height: "500px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, oklch(0.96 0.008 80 / 0.06) 0%, transparent 70%)",
+            transform: "translateY(-20%)",
           }}
-        >
-          ALDIOR
-        </h1>
+        />
+
+        {/* Brand logo image */}
+        <motion.img
+          src="/assets/uploads/642952176_18050180807503559_3939477048185680875_n-1.jpg"
+          alt="ALDIOR"
+          className="hero-logo-img"
+          initial={{ opacity: 0, scale: 1.15 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        />
 
         {/* Tagline */}
         <p className="aldior-tagline-reveal text-xs md:text-sm font-body font-semibold tracking-[0.5em] text-white/70 uppercase mt-6 md:mt-8">
-          Build Loud. Worn Loose.
+          BUILD LOUD. WORN LOOSE.
         </p>
 
         {/* CTA */}
@@ -334,7 +346,9 @@ export function HomePage() {
       <div id="home-content">
         <MarqueeStrip />
         <FeaturedSection />
+        <div className="aldior-gold-divider mx-10 md:mx-20" />
         <BrandStatement />
+        <div className="aldior-gold-divider mx-10 md:mx-20" />
         <CategoryGrid />
       </div>
     </main>

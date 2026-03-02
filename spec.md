@@ -1,45 +1,38 @@
 # ALDIOR
 
 ## Current State
-Full dark-theme clothing brand website with Hero, Shop, About, Contact pages. Footer has multiple social links (Instagram, Twitter/X, TikTok), placeholder email hello@aldior.com, US address, EST hours, and "Built with love using caffeine.ai" credit. Header shows text "ALDIOR" logo. Prices formatted in USD ($). Shop page has "SS26" label. Contact page has US address, EST timezone, TikTok and Twitter links. MarqueeStrip has "SS26" in text.
+- Full black-theme luxury menswear website with Header, Hero, MarqueeStrip, FeaturedSection, BrandStatement, CategoryGrid, Footer, Shop, About, Contact pages
+- Hero section shows large "ALDIOR" text with zoom animation + hero background image
+- Header has the AD monogram logo image + "ALDIOR" wordmark
+- Live typewriter/animated text in the hero appears to render a question mark artifact
+- Logo image exists at `/assets/uploads/642952176_18050180807503559_3939477048185680875_n-1.jpg`
 
 ## Requested Changes (Diff)
 
 ### Add
-- Brand monogram logo image in Header (the uploaded AD interlock logo `/assets/uploads/642952176_18050180807503559_3939477048185680875_n-1.jpg`) alongside or replacing plain text ALDIOR — display the image logo, keep "ALDIOR" text next to it or use it as the logo mark
-- Good-looking footer with newsletter/email connect section showing ujjwaljain099@gmail.com
-- Indian business hours in footer/contact (IST timezone, Mon-Sat 10AM-7PM IST)
-- Indian address context (India)
+- Luxury visual enhancements throughout: refined spacing, subtle gold accents, elevated typography hierarchy
+- A dedicated full-width logo showcase in the hero (replacing "ALDIOR" text) -- display the AD monogram brand logo image prominently and beautifully centered
+- Cinematic ambient lighting/glow effect behind the logo in the hero
+- Thin horizontal gold/cream rule separators between major sections
+- Subtle hover shimmer on product cards
+- Premium feel to the marquee strip (slightly larger, more refined)
 
 ### Modify
-- Header: show the uploaded brand logo image (AD monogram) as the logo mark in navbar, make "ALDIOR" text slightly larger/bolder next to it
-- Footer: replace all social links with ONLY Instagram (https://www.instagram.com/aldior.in?igsh=end3nxd4agtiexfz), remove Twitter/X and TikTok completely
-- Footer: change email to ujjwaljain099@gmail.com
-- Footer: change hours to IST (Mon–Sat · 10AM–7PM IST)
-- Footer: remove "Built with love using caffeine.ai" line entirely
-- Footer: add a "Connect" / newsletter section with email ujjwaljain099@gmail.com prominently displayed
-- Footer: redesign to be more premium and editorial — add a large brand statement or quote
-- Contact page: remove Twitter/X and TikTok, show only Instagram link with real URL
-- Contact page: update email to ujjwaljain099@gmail.com
-- Contact page: change address from New York to India (e.g., "India")
-- Contact page: change hours from EST to IST (Mon–Sat · 10AM–7PM IST)
-- Shop page: remove "SS26" label above the SHOP heading
-- HomePage FeaturedSection: remove "SS26 Collection" subtitle label, change to just "New Collection" or "Latest Drops"
-- MarqueeStrip: remove "SS26" from the scrolling text
-- Prices: convert all prices from USD cents to INR — update formatPrice to display ₹ symbol with Indian number formatting (e.g., ₹4,900)
-- Update fallback product prices to realistic INR values (e.g., tee ~₹1,499, hoodie ~₹2,999, bomber ~₹5,999, etc.)
+- **Hero**: Remove the large "ALDIOR" text heading from the hero. Instead, display the brand logo image (AD monogram) large and centered as the hero focal point -- clean, no text clutter. Keep the tagline and CTA below it. Keep the background image and parallax.
+- **Hero typewriter/live text**: Remove or fix the question mark artifact -- ensure the tagline text renders cleanly with no stray characters
+- **Header logo**: Ensure the AD monogram logo image displays properly (correct sizing, no distortion, crisp rendering). Make logo slightly larger and give it a subtle white background or just ensure it's visible on dark bg.
+- **Typography**: Slightly tighten letter-spacing and improve font hierarchy for a more editorial, ultra-luxury feel
+- **Buttons**: Upgrade CTA button to feel more premium -- thinner border, refined hover state
+- **Color**: Introduce very subtle warm gold (#c9a96e style) accent where appropriate (e.g., dividers, category tile underlines, footer accents) to reinforce luxury
 
 ### Remove
-- "Built with love using caffeine.ai" footer credit link
-- All Twitter/X social links
-- All TikTok social links
-- "SS26" references everywhere (shop page header label, homepage featured section label, marquee strip)
+- Remove the "ALDIOR" h1 text from the hero (replace with logo image)
+- Remove any question mark or stray character from the animated/live text in the hero section
 
 ## Implementation Plan
-1. Update `imageMap.ts` formatPrice to use ₹ INR formatting
-2. Update fallback product prices in ShopPage.tsx to realistic INR bigint values
-3. Update Header.tsx to show the AD logo image alongside ALDIOR text
-4. Redesign Footer.tsx: only Instagram, email ujjwaljain099@gmail.com, IST hours, remove caffeine credit, add premium connect section
-5. Update ContactPage.tsx: only Instagram with real URL, correct email, India address, IST hours
-6. Update HomePage.tsx: remove SS26 from marquee and featured section label
-7. Update ShopPage.tsx: remove SS26 label above SHOP heading
+1. Update `HomePage.tsx` Hero component: replace `<h1>ALDIOR</h1>` with the brand logo image displayed large and centered; fix any typewriter text rendering issues
+2. Update `Header.tsx`: ensure logo image renders crisp and properly sized; maybe increase logo image size slightly
+3. Update `index.css`: add gold accent token, refine brand animations, add premium shimmer/glow effects, add gold divider utilities
+4. Enhance product cards and category tiles with subtle luxury refinements
+5. Add thin gold/cream horizontal dividers between page sections on HomePage
+6. Validate and build
